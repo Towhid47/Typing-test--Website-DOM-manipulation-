@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Bootstrap CSS Cdn Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="title"><img src="./logo.png" /></h1>
+
+    <div style="margin-left:200px; margin-right:200px;">
+        <p style="text-align:right;"><a href="index.html" style="color:rgb(162, 228, 31); text-decoration:none; font-size:24px; border-bottom:2px solid greenyellow;">Goto Home</a></p>
+        </div>
+
+    <h2 class="text-center text-light mt-5">Simple Questions & Answers</h2>
+
+    <!-- Accordion Section -->
+    <main>
+        <div class="container accordion accordion-flush bg-success" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  What are the difference between Local Storage & Session Storage ? 
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                       
+                       <table class="table">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Local Storage</th>
+                                        <th scope="col">Session Storage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <th scope="row">1</th>
+                                        <td>The storage capacity of local storage is 5MB/10MB</td>
+                                        <td>The storage capacity of session storage is 5MB</td>
+                                        </tr>
+                                        <tr>
+                                        <th scope="row">2</th>
+                                        <td>As it is not session-based, it must be deleted via javascript or manually</td>
+                                        <td>It’s session-based and works per window or tab. This means that data is stored only for the duration of a session, i.e., until the browser (or tab) is closed</td>
+                                        </tr>
+                                        <tr>
+                                        <th scope="row">3</th>
+                                        <td>The client  can only read local storage</td>
+                                        <td>The client can't read session storage</td>
+                                        </tr>
+                                    </tbody>
+                                    </table>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  Global Scope VS Block Scope
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                        <p><b>Global Scope:</b></p>
+                        <p>The variables defined outside of any function or curly brackets are known as global variables and have global scope. Global scope means that the variables can be accessed from any part of that program, any function or conditional state can access that variable.</p>
+                        <p><b>Block Scope:</b></p>
+                        <p>Block scope is also a sub-type of local scope. The block scope can be defined as the scope of the variables inside the curly brackets {}. Now, these curly brackets can be of loops, or conditional statements, or something else. You are only allowed to refer to these variables from within the curly brackets {}.</p>
+
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                  What is Event Loop in JS ?
+                </button>
+              </h2>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <p><b>Event Loop :</b></p>
+                    <p>The event loop is the secret behind JavaScript's asynchronous 
+                        programming. JS executes all operations on a single thread, but using a 
+                        few smart data structures, it gives us the illusion of multi-threading.</p>
+                    <p><b><u>Example:</u></b></p>   
+                    <pre class="text-danger">
+                        const first = () => console.log('Hi,i am first');
+                        const second = () => console.log('Hi,i am second');
+                        const third = () => console.log('Hi,i am third');
+                        const fourth = () => {
+                            first();
+                            setTimeout(second, 4000);
+                           <pre class="text-secondary"> //store in queue & it will execute after 4 seconds </pre>
+                            setTimeout(third, 2000);
+                           <pre class="text-secondary"> //store in queue & it will execute after 2 seconds </pre>
+                            console.log('Hi,i am fourth');
+                        };
+                        fourth();
+                    </pre> 
+                    <pre class="text-secondary">
+                        //Expected output:
+                            /*Hi,i am first
+                            Hi,i am fourth
+                            Hi,i am third
+                            Hi,i am second 
+                            */
+                    </pre>
+
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                 In Which reasons you may get &nbsp <span class="text-danger"> undefined </span>&nbsp  in JavaScript ?
+                </button>
+              </h2>
+              <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+              </div>
+            </div>
+          </div>
+    </main>
+  
+  
+
+
+
+<!-- Bootstrap JS Cdn Link -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>  
