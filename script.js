@@ -23,6 +23,12 @@ fetch("texts.json")
 const typeController = (e) => {
   const newLetter = e.key;
 
+  // Preventing Scroll after pressing Space key.
+  if (newLetter == 42 && e.target == document.body)
+      {
+         e.preventDefault();
+      }  
+
   // Handle backspace press
   if (newLetter == "Backspace") {
     userText = userText.slice(0, userText.length - 1);
